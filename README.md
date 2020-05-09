@@ -1,9 +1,3 @@
-## 效果图
-![image](https://zechao-resources.oss-cn-shanghai.aliyuncs.com/tempfile/map/index.png)
-
-![image](https://zechao-resources.oss-cn-shanghai.aliyuncs.com/tempfile/map/index2.png)
-
-![image](https://zechao-resources.oss-cn-shanghai.aliyuncs.com/tempfile/map/index3.png)
 
 ## 使用说明
 在index.html中引入 
@@ -18,8 +12,14 @@ module.exports = {
       'AMap': 'AMap' // 高德地图配置
     }
   }
-}
 ```
+}
+## 效果图
+![image](https://zechao-resources.oss-cn-shanghai.aliyuncs.com/tempfile/map/index.png)
+
+![image](https://zechao-resources.oss-cn-shanghai.aliyuncs.com/tempfile/map/index2.png)
+
+![image](https://zechao-resources.oss-cn-shanghai.aliyuncs.com/tempfile/map/index3.png)
 ## Project setup
 ```
 npm install
