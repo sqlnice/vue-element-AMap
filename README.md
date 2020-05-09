@@ -1,8 +1,8 @@
 
 ## 使用说明
-在index.html中引入 
+在index.html中引入 (自己去高德官网申请key，注意申请的key类型要为WEB端)
 ```
-<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=872d315a8f55a1da909c08dc50e36a4f"></script>
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=yourkey"></script>
 ```
 在vue.config.js添加
 ```
