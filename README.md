@@ -20,5 +20,13 @@ npm run build
 npm run lint
 ```
 
+## 效果图
+![image](https://zechao-resources.oss-cn-shanghai.aliyuncs.com/tempfile/map/index.png)
+
+![image](https://zechao-resources.oss-cn-shanghai.aliyuncs.com/tempfile/map/index2.png)
+
+![image](https://zechao-resources.oss-cn-shanghai.aliyuncs.com/tempfile/map/index3.png)
+
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
