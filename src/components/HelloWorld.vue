@@ -52,7 +52,27 @@ export default {
       polyline: null,
       passedPolyline: null,
       selectedDate: [],
-      markerArr: [] //电池经纬度,也用于画线
+      markerArr: [], //电池经纬度,也用于画线
+      startIcon: new AMap.Icon({
+        //起点图标
+        // 图标尺寸
+        size: new AMap.Size(25, 34),
+        // 图标的取图地址
+        image:
+          "//a.amap.com/jsapi_demos/static/demo-center/icons/dir-marker.png",
+        // 图标所用图片大小
+        imageSize: new AMap.Size(135, 40),
+        // 图标取图偏移量
+        imageOffset: new AMap.Pixel(-9, -3)
+      }),
+      endIcon: new AMap.Icon({
+        //终点图标
+        size: new AMap.Size(25, 34),
+        image:
+          "//a.amap.com/jsapi_demos/static/demo-center/icons/dir-marker.png",
+        imageSize: new AMap.Size(135, 40),
+        imageOffset: new AMap.Pixel(-95, -3)
+      })
     };
   },
   methods: {
@@ -66,6 +86,7 @@ export default {
       });
       //初始化地图
     },
+    //初始化地图
     initMap() {
       let that = this;
       that.map = new AMap.Map("map-container", {
@@ -1958,8 +1979,11 @@ export default {
         }
       }, 1000);
     },
+    //画线
     playLine() {
       let that = this;
+      //初始化起点终点
+      that.initStartEnd();
       that.marker = new AMap.Marker({
         map: that.map,
         //小车出初始位置
@@ -1999,6 +2023,27 @@ export default {
       setTimeout(() => {
         that.map.setFitView();
       }, 500);
+    },
+    //初始化起点终点
+    initStartEnd() {
+      let that = this;
+      //将icon添加进marker
+      let startMarker = new AMap.Marker({
+        position: new AMap.LngLat(that.markerArr[0][0], that.markerArr[0][1]),
+        icon: that.startIcon,
+        offset: new AMap.Pixel(-13, -30)
+      });
+      //将icon添加进marker
+      let endMarker = new AMap.Marker({
+        position: new AMap.LngLat(
+          that.markerArr.pop()[0],
+          that.markerArr.pop()[1]
+        ),
+        icon: that.endIcon,
+        offset: new AMap.Pixel(-13, -30)
+      });
+      // 将 markers 添加到地图
+      that.map.add([startMarker, endMarker]);
     },
     //关闭弹窗时
     closeBatteryHistroy() {
